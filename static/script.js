@@ -86,7 +86,16 @@ vert3.addEventListener('change', ()=>{
 let vert4 = document.getElementById('vert4')
 vert4.addEventListener('change', ()=>{
     if(vert4.checked){
-        valores.push(vert4.getAttribute('value'))
+        console.log(valores)
+        vert1.checked = true
+        vert2.checked = true
+        vert3.checked = true
+
+        valores = []
+        valores.push(vert1.getAttribute('value'))
+        valores.push(vert2.getAttribute('value'))
+        valores.push(vert3.getAttribute('value'))
+
         selecao.setAttribute('placeholder', valores)
         selecao.setAttribute('value', valores)
         console.log(selecao.getAttribute('value'))
@@ -107,29 +116,29 @@ vert4.addEventListener('change', ()=>{
     
 })
 
-let vert5 = document.getElementById('vert5')
-vert5.addEventListener('change', ()=>{
-    if(vert5.checked){
-        valores.push(vert5.getAttribute('value'))
-        selecao.setAttribute('placeholder', valores)
-        selecao.setAttribute('value', valores)
-        console.log(selecao.getAttribute('value'))
-    }
-    else{
-        let x = vert5.getAttribute('value')
-        valores.forEach((element) => {
-            if(element != x){
-                valores2.push(element)
-            }
-        });
-        valores = valores2
-        valores2 = []
-        selecao.setAttribute('placeholder', valores)
-        selecao.setAttribute('value', valores)
-        console.log(selecao.getAttribute('value'))
-    }
+// let vert5 = document.getElementById('vert5')
+// vert5.addEventListener('change', ()=>{
+//     if(vert5.checked){
+//         valores.push(vert5.getAttribute('value'))
+//         selecao.setAttribute('placeholder', valores)
+//         selecao.setAttribute('value', valores)
+//         console.log(selecao.getAttribute('value'))
+//     }
+//     else{
+//         let x = vert5.getAttribute('value')
+//         valores.forEach((element) => {
+//             if(element != x){
+//                 valores2.push(element)
+//             }
+//         });
+//         valores = valores2
+//         valores2 = []
+//         selecao.setAttribute('placeholder', valores)
+//         selecao.setAttribute('value', valores)
+//         console.log(selecao.getAttribute('value'))
+//     }
     
-})
+// })
 
 
 
