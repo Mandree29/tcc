@@ -3,18 +3,19 @@
 }
 
 body{
-    background-color: rgb(166, 174, 175);
+    background-color: gray;
 }
 
 main{
     /* border: 1px solid black; */
     margin-left: auto;
     margin-right: auto;
-    width: max-content;
+    width: 60dvh;
     padding: 20px;
     margin-top: 12%;
-    background-color: rgb(249, 249, 250);
+    background-color: rgb(253, 253, 253);
     box-shadow: 2px 2px 5px black;
+    border-radius: 1%;
 }
 
 
@@ -83,7 +84,7 @@ input{
 }
 
 .lista2{
-    box-shadow: 0 10px 60px rgb(0,0,0, 0.2);
+    box-shadow: 0 10px 60px rgb(0,0,0, 0.1);
     padding: 0.3rem;
     padding-left: 0;
     display: none;
@@ -130,7 +131,22 @@ h3{
     border-radius: 15px;
     margin-left: auto;
     margin-right: auto;
-    height: 40px;
+    height: 35px;
+    margin-top: 6%;
+}
+
+#form2{
+    display: flex;
+}
+
+
+#btn2{
+    display: inline-block;
+    border: none;
+    border-radius: 15px;
+    margin-left: 3%;
+    background-color: black;
+    color: white;
 }
 
 .x{

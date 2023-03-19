@@ -1,4 +1,5 @@
 from db import BD
+import tratamento_json
 
 def encontrando_vertices(frase:str):
     result_vertices = []
@@ -43,7 +44,7 @@ def check_tudo():
     #caso entity
 def checando_Entidade():
     bd = BD()
-    return bd.Query_Entity()
+    return tratamento_json.json_entidade(bd.Query_Entity())
 
     #caso file
 def checando_file():
@@ -54,3 +55,5 @@ def checando_file():
 def checando_Type():
     bd = BD()
     return bd.Query_Type()
+
+

@@ -1,6 +1,7 @@
 from lib2to3.pgen2 import driver
 from msilib.schema import Class
 from neo4j import GraphDatabase
+import json
 
 
 class BD:
@@ -45,6 +46,8 @@ class BD:
             lista.append(result['objeto'])
         self.session.close()
         return lista
+    
+# realizar a pesquisa para retornar todos os nomes dos vétices para ser utilizado na barra de pesquisa
 
 
 

@@ -17,10 +17,11 @@ build/
 .idea/
 docs/_build/
 .vscode
-__pychache__/
+/__pychache__/
 
 # Coverage reports
 htmlcov/
 .coverage
 .coverage.*
 *,cover
+static/css/bootstrap-grid.

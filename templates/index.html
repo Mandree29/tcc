@@ -63,24 +63,29 @@
             </label>
         </div>
     </div>
+    <br><br>
+    <input type="submit" value="Pesquisar" class="btn btn-primary" id="btn">
+</form>
 </section>
 <!-- <label for="prop" class="form-label">
      <span class="x">Propriedade</span>
     <input type="text" name="prop" class="form-control" placeholder="Propriedade" id="prop">
 </label> -->
+<form action="localhost:5000/pesquisa/nomes" method="post">
 <h4>Entidades</h4>
-<label for="valor" class="form-label">
+<label for="valor" class="form-label" id="form2">
      <!-- <span class="x">Nome</span> -->
-    <input type="text" name="val" placeholder="Nome" class="form-control" id="val">
+    <input type="text" name="val" placeholder="Digite o nome da Entidade" class="form-control" id="nomes">
+    <input type="submit" value="Pesquisar" class="btn btn-primary" id="btn2">
 </label>
-<br><br>
-    <input type="submit" value="Pesquisar" class="btn btn-primary" id="btn">
+
 </form>
 </main>
 
     <script src="..\static\script.js"></script>
     <script src="..\static\script2.js"></script>
     <script src="../static/script3.js"></script>
+    <script src="../static/searchbar.js"></script>
     <script src="../static/js/bootstrap.bundle.js"></script>
 </body>
 </html>

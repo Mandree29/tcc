@@ -2,8 +2,14 @@
 from templates.graph import grafo
 from tratemento_string import *
 from flask import Flask, render_template, request
+import json
+from flask_cors import CORS
+from flask import request
 
 app = Flask(__name__)
+
+
+CORS(app)
 
 @app.route("/")
 def home():
@@ -22,9 +28,8 @@ def resultado():
 
     ck = Check_Controller(vertice, rel)
     print(ck)
-
-
- 
+    json.dumps(ck)
+    print(type(ck))    
 
 
 
@@ -38,6 +43,13 @@ def resultado():
     #vertice=vertice, rel=rel, prop=prop, val=val, grafico = grafico
 
     return render_template("index.html")
+
+@app.route("/pesquisa/nomes", methods=['GET'])
+def nomes_vertices():
+    nomes = checando_Entidade()
+    print(nomes)
+    return nomes
+
 
 if __name__ == "__main__":
     app.run()
