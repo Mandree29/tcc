@@ -1,25 +1,16 @@
 var barra = document.getElementById('nomes')
+var caixa_nomes = document.getElementById('caixa_nomes')
 var nomes
+var lista_nomes = []
+var valor = ''
 
 
-barra.addEventListener('focus', foco_ajax)
+window.onload = foco_ajax()
 barra.addEventListener('keyup', search_bar)
 
 
 
-
 function foco_ajax(){
-    //  console.log('foco_event')
-    //  let xhr = new XMLHttpRequest()
-    //  xhr.open('GET', 'http://127.0.0.1/pesquisa/nomes', true)
-    //  xhr.setRequestHeader
-    // xhr.onload = function(){
-    //  if(this.status == 200){
-    //         console.log('sucesso')
-    //     }
-    //  }
-    //  xhr.send()
-
     fetch(`${window.origin}/pesquisa/nomes`, {
         method:"GET",
         body:JSON.stringify(nomes),
@@ -37,8 +28,9 @@ function foco_ajax(){
         }
         response.json().then(function(data){
             data.forEach(element => {
-                console.log(element.nome)
+                lista_nomes.push(element.nome)
             });
+        
         })
     })
 
@@ -46,6 +38,40 @@ function foco_ajax(){
 
 
 
-function search_bar(){
-    console.log('ok')
-}
+function search_bar(letras){
+    var itens = document.querySelectorAll('ul > li')
+    console.log(itens)
+    for(elementos of itens){
+        caixa_nomes.removeChild(elementos)
+    }
+    letras = barra.value
+    if(letras == ""){
+        caixa_nomes.style.display = 'none'
+    }
+    console.log(letras)  
+    for(palavra of lista_nomes){
+        palavra = palavra.toLowerCase()
+        letras = letras.toLowerCase()
+
+        if(palavra.slice(0,letras.length) == letras){
+            if(letras == ""){
+                break
+            }
+            caixa_nomes.style.display = 'block'
+            let element = document.createElement('li')
+            element.addEventListener('click', valor_pesquisa)
+            let texto = document.createTextNode(palavra)
+            element.appendChild(texto)
+            caixa_nomes.appendChild(element)
+        }
+    }
+
+
+ }
+
+
+ const valor_pesquisa = (e) =>{
+    let x = e.target
+    console.log(x.firstChild)
+    barra.value = x.innerHTML
+ }

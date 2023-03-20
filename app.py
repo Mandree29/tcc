@@ -51,5 +51,7 @@ def nomes_vertices():
     return nomes
 
 
+@app.rout("/")
+
 if __name__ == "__main__":
     app.run()
