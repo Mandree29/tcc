@@ -14,7 +14,7 @@
     <section>
     <form action="/pesquisa" id="form_1">
     <div class="select_vertice">
-        <h3>Vértices</h3>
+        <h3 id="tit_vert">Vértices</h3>
         <div class="campo_selecao">
             <input type="text" placeholder=" escolha vertices" id="select_input" class="seletor_input" value="" name="vertice">
             <span class="seta_baixo"> &blacktriangledown;</span>
@@ -41,7 +41,7 @@
     </div>
 
     <div class="select_rel">
-        <h3>Relacionamentos</h3>
+        <h3 id="tit_rel">Relacionamentos</h3>
         <div class="campo_selecao2">
         <input type="text" placeholder="  escolha relacionamentos" id="rel_id" class="rel_class" value="" name="relacionamento" >
         <span class="seta_baixo2"> &blacktriangledown;</span>
@@ -72,7 +72,7 @@
      <span class="x">Propriedade</span>
     <input type="text" name="prop" class="form-control" placeholder="Propriedade" id="prop">
 </label> -->
-<form action="localhost:5000/pesquisa/nomes" method="post">
+<form action="localhost:5000/pesquisa/nomes" method="get" id="form_2">
 <h3>Entidades</h3>
 <label for="valor" class="form-label" id="form2">
      <!-- <span class="x">Nome</span> -->
@@ -82,7 +82,6 @@
 <ul id="caixa_nomes"></ul>
 </form>
 </main>
-
     <script src="..\static\script.js"></script>
     <script src="..\static\script2.js"></script>
     <script src="../static/script3.js"></script>

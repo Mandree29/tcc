@@ -3,7 +3,7 @@ var valores2 = []
 var selecao = document.querySelector(".seletor_input")
 
 document.querySelector('.campo_selecao').addEventListener('click',()=>{
-   document.querySelector('.lista').classList.toggle('show');
+//    document.querySelector('.lista').classList.toggle('show');
     document.querySelector('.seta_baixo').classList.toggle('rotate180');
 })
 

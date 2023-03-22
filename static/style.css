@@ -29,7 +29,10 @@ h1{
 
 h3{
     margin-bottom: 1%;
-    margin-left: 2.2%;
+    margin-left: 3%;
+    font-size: 22pt;
+    margin-top: 0;
+
 }
 
 
@@ -44,6 +47,7 @@ input{
 
 .campo_selecao{
     border:1px solid black;
+    height: 2rem;
 }
 
 .campo_selecao,.vertice, .lista{
@@ -63,27 +67,21 @@ input{
     padding-left: 0;
 }
 
-.lista{
-    box-shadow: 0 10px 60px rgb(0,0,0, 0.2);
-    padding: 0.3rem;
-    padding-left: 0;
-    display: none;
-}
-
-.show{
-    display: block;
-}
 .rotate180{
     transform: rotate(180deg);
 }
 
 .select_rel {
-    width: 50%;
+    width: 48%;
     margin-left: 10px;
 }
 .campo_selecao2, .rel, .lista2 {
     width: 100%;
     background-color: white;
+}
+
+.campo_selecao2{
+    height: 2rem;
 }
 .select_vertice{
     width: 50%;
@@ -93,11 +91,23 @@ input{
     border: 1px solid black;
 }
 
+.lista{
+    box-shadow: 0 10px 60px rgb(0,0,0, 0.2);
+    padding: 0.3rem;
+    padding-left: 0;
+    display: block;
+    width: 99%;
+    font-weight: 600;
+   
+}
+
 .lista2{
     box-shadow: 0 10px 60px rgb(0,0,0, 0.1);
     padding: 0.3rem;
     padding-left: 0;
-    display: none;
+    display: block;
+    width: 98%;
+    font-weight: 600;
 }
 
 .seta_baixo2{
@@ -112,8 +122,18 @@ input{
     padding-left: 0;
 }
 
+.show{
+    display: block;
+    width: 98%;
+    font-weight: 600;
+
+}
+
 .show2{
     display: block;
+    width: 98%;
+    font-weight: 600;
+    background-color: rgb(252, 250, 250);
 }
 .rotate1802{
     transform: rotate(180deg);
@@ -121,8 +141,18 @@ input{
 
 section{
     /* display: flex; */
-    margin-bottom: 20px;
-    margin-top: 80px;
+    /* margin-bottom: 20px; */
+    /* margin-top: 80px; */
+    align-items: center;
+    justify-content: center;
+    border: 1px solid black;
+    padding-bottom: 5%;
+    /* padding-left: 1%;
+    padding-right: 1%; */
+    padding-top: 2%;
+    /* padding-left: 1px; */
+    padding-right: 1px;
+    margin-top: 9%;
 }
 
 #form_1{
@@ -142,11 +172,22 @@ section{
     background-color: black;
     color: white;
     border: none;
-    border-radius: 15px;
+    border-radius: 1.2rem;
     margin-left: auto;
     margin-right: auto;
     height: 35px;
-    margin-top: 6%;
+    margin-top: 1%;
+    width: 37%;
+    font-size: 14pt;
+    font-weight: 400;
+}
+
+#form_1{
+    margin-bottom: 6%;
+}
+
+#form_2{
+    margin-top: 3%;
 }
 
 #form2{
@@ -157,10 +198,14 @@ section{
 #btn2{
     display: inline-block;
     border: none;
-    border-radius: 15px;
-    margin-left: 3%;
+    border-radius: 1.2rem;
+    width: 19%;
+    margin-left: 0.5%;
     background-color: black;
     color: white;
+    font-size: 13pt;
+    font-weight: 400;
+
 }
 
 .x{
