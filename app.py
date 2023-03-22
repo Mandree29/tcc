@@ -28,8 +28,7 @@ def resultado():
 
     ck = Check_Controller(vertice, rel)
     print(ck)
-    json.dumps(ck)
-    print(type(ck))    
+    json.dumps(ck) 
 
 
 
@@ -47,11 +46,9 @@ def resultado():
 @app.route("/pesquisa/nomes", methods=['GET'])
 def nomes_vertices():
     nomes = checando_Entidade()
-    print(nomes)
     return nomes
 
 
-@app.rout("/")
 
 if __name__ == "__main__":
     app.run()
