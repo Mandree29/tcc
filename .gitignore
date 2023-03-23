@@ -25,3 +25,6 @@ htmlcov/
 .coverage.*
 *,cover
 static/css/bootstrap-grid.
+__pycache__/db.cpython-39.pyc
+__pycache__/db.cpython-39.pyc
+__pycache__/tratemento_string.cpython-39.pyc
