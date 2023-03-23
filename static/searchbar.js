@@ -7,6 +7,8 @@ var valor = ''
 
 window.onload = foco_ajax()
 barra.addEventListener('keyup', search_bar)
+barra.addEventListener('focus', luz_de_atencao)
+barra.addEventListener('blur', tirar_sobreamento)
 
 
 
@@ -74,4 +76,13 @@ function search_bar(letras){
     let x = e.target
     console.log(x.firstChild)
     barra.value = x.innerHTML
+ }
+
+ function luz_de_atencao(){
+    console.log("foco")
+    barra.style.boxShadow = "blur"
+ }
+
+ function tirar_sobreamento(){
+    barra.style.boxShadow = "none"
  }
