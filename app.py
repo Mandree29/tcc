@@ -1,19 +1,16 @@
 
-from templates.graph import grafo
+from grafos.graph import grafo
 from tratemento_string import *
 from flask import Flask, render_template, request
 import json
-from flask_cors import CORS
 from flask import request
 
 app = Flask(__name__)
 
 
-CORS(app)
-
 @app.route("/")
 def home():
-    return render_template("index.html")
+    return render_template("index.html", iframe ="http://127.0.0.1:5500/grafos/grafo.html" )
 
 @app.route("/pesquisa", methods=['GET'])
 def resultado():
@@ -29,17 +26,6 @@ def resultado():
     ck = Check_Controller(vertice, rel)
     print(ck)
     json.dumps(ck) 
-
-
-
-    # if len(lista_rel) == 0 and len(lista_vert) == 1:
-    #     if lista_vert[0] == "Entity":
-    #         pass
-
-    # grafo()
-    #return render_template("resultado.html",vertice=vertice, rel=rel, prop=prop, val=val)
-    #return render_template("basic.html")
-    #vertice=vertice, rel=rel, prop=prop, val=val, grafico = grafico
 
     return render_template("index.html")
 
