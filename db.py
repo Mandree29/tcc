@@ -49,5 +49,14 @@ class BD:
     
 # realizar a pesquisa para retornar todos os nomes dos vétices para ser utilizado na barra de pesquisa
 
+# pesquisa por cada entidade
 
 
+    def Query_PorEntidade(self, entidade:str):
+        lista = []
+        query = "match (f:File)<-[:Pertence]-(n:Entity)-[:`É`]->(t:Type) where n.name ='{}' return [n.name, f.name, t.name] as objeto".format(entidade)
+        results = self.session.run(query)
+        for result in results:
+            lista.append(result['objeto'])
+        self.session.close()
+        return lista

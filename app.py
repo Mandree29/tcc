@@ -38,9 +38,10 @@ def nomes_vertices():
 @app.route("/pesquisa2", methods=["GET"])
 def nome_entidade():
     ent = request.args.get('val')
-    print(ent)
+    bd = BD()
+    resultado = bd.Query_PorEntidade(ent)
+    print(resultado)
     return render_template('index.html')
-
 
 if __name__ == "__main__":
     app.run()

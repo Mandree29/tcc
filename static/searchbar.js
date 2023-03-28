@@ -52,10 +52,10 @@ function search_bar(letras){
     }
     console.log(letras)  
     for(palavra of lista_nomes){
-        palavra = palavra.toLowerCase()
+        palavra2 = palavra.toLowerCase()
         letras = letras.toLowerCase()
 
-        if(palavra.slice(0,letras.length) == letras){
+        if(palavra2.slice(0,letras.length) == letras){
             if(letras == ""){
                 break
             }
