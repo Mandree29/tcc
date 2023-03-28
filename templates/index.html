@@ -5,13 +5,12 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="..\static\style.css">
-    <!-- <link rel="stylesheet" href="../static/css/bootstrap.css"> -->
     <title>Pesquisa Grafo</title>
 </head>
 <body>
     <main>
     <h1>Pesquisa Web Semântica</h1>
-    <iframe src="{{iframe}}" width="100%" height="50%" frameborder="1" scrolling="auto"></iframe>
+    <iframe  width="100%" height="50%" frameborder="1" scrolling="auto" id="iframe"></iframe>
     <section>
     <form action="/pesquisa" id="form_1">   
     <div class="select_vertice">
@@ -69,14 +68,9 @@
     <input type="submit" value="Pesquisar" class="btn btn-primary" id="btn">
 </form>
 
-<!-- <label for="prop" class="form-label">
-     <span class="x">Propriedade</span>
-    <input type="text" name="prop" class="form-control" placeholder="Propriedade" id="prop">
-</label> -->
 <form action="pesquisa2" method="get" id="form_2">
 <h3 id="tit_entidades">Entidades</h3>
 <label for="valor" class="form-label" id="form2">
-     <!-- <span class="x">Nome</span> -->
     <input type="text" name="val" placeholder="Digite o nome da Entidade" class="form-control" id="nomes">
     <input type="submit" value="Pesquisar" class="btn btn-primary" id="btn2">
 </label>
@@ -87,5 +81,6 @@
     <script src="..\static\script2.js"></script>
     <script src="../static/script3.js"></script>
     <script src="../static/searchbar.js"></script>
+    <script src="../static/load_iframe.js"></script>
 </body>
 </html>
