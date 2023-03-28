@@ -1,5 +1,5 @@
 
-from grafos.graph import grafo
+from grafos.graph import grafo, grafoPesquisaPorEntidade
 from tratemento_string import *
 from flask import Flask, render_template, request
 import json
@@ -18,8 +18,6 @@ def resultado():
     vertice = encontrando_vertices(vertice)
     rel = request.args.get('relacionamento')
     rel = encontrando_rel(rel)
-    #prop = request.args.get('prop')
-    #val = request.args.get('val')
     print(vertice)
     print(rel)
 
@@ -41,6 +39,7 @@ def nome_entidade():
     bd = BD()
     resultado = bd.Query_PorEntidade(ent)
     print(resultado)
+    grafoPesquisaPorEntidade(resultado)
     return render_template('index.html')
 
 if __name__ == "__main__":
