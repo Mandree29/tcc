@@ -35,6 +35,12 @@ def nomes_vertices():
     return nomes
 
 
+@app.route("/pesquisa2", methods=["GET"])
+def nome_entidade():
+    ent = request.args.get('val')
+    print(ent)
+    return render_template('index.html')
+
 
 if __name__ == "__main__":
     app.run()
