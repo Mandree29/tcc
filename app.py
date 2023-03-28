@@ -1,5 +1,5 @@
 
-from grafos.graph import grafo, grafoPesquisaPorEntidade
+from grafos.graph import grafoPesquisaPorEntidade
 from tratemento_string import *
 from flask import Flask, render_template, request
 import json
@@ -21,9 +21,7 @@ def resultado():
     print(vertice)
     print(rel)
 
-    ck = Check_Controller(vertice, rel)
-    print(ck)
-    json.dumps(ck) 
+    Check_Controller(vertice, rel) 
 
     return render_template("index.html")
 

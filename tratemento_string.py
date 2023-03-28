@@ -1,5 +1,6 @@
 from db import BD
 import tratamento_json
+from grafos.graph import *
 
 def encontrando_vertices(frase:str):
     result_vertices = []
@@ -30,11 +31,11 @@ def Check_Controller(vertice:list, rel:list):
 
     elif len(vertice) == 1 and len(rel) == 0:
         if vertice[0] == "Entity":
-            return checando_Entidade()
+            return grafoEntidade(checando_Entidade_semJson())
         elif vertice[0] == "File":
-            return checando_file()
+            return grafoFile(checando_file())
         elif vertice[0] == "Type":
-            return checando_Type()
+            return grafoType(checando_Type())
         
     #primeiro caso de pesquisa (TUDO)
 def check_tudo():
@@ -45,6 +46,10 @@ def check_tudo():
 def checando_Entidade():
     bd = BD()
     return tratamento_json.json_entidade(bd.Query_Entity())
+
+def checando_Entidade_semJson():
+    bd = BD()
+    return bd.Query_Entity()
 
     #caso file
 def checando_file():
