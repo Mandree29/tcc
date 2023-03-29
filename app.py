@@ -1,6 +1,6 @@
 
 from grafos.graph import grafoPesquisaPorEntidade
-from tratemento_string import *
+from controller import *
 from flask import Flask, render_template, request
 import json
 from flask import request
@@ -34,10 +34,7 @@ def nomes_vertices():
 @app.route("/pesquisa2", methods=["GET"])
 def nome_entidade():
     ent = request.args.get('val')
-    bd = BD()
-    resultado = bd.Query_PorEntidade(ent)
-    print(resultado)
-    grafoPesquisaPorEntidade(resultado)
+    grafoPesquisaPorEntidade(ent)
     return render_template('index.html')
 
 if __name__ == "__main__":
