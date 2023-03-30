@@ -111,3 +111,91 @@ def grafoPesquisaPorEntidade(entidade:str): # geração de grafo para pesquisa i
     return None
 
 
+# pagina = 'grafo.html'
+# g = Network(notebook=False)
+# bd = BD()
+# lista1 = bd.Query_Entity()
+# print(lista1)
+# bd = BD()                  # tive que estanciar de novo porque cada metodo fecha a conexão (sessão com o banco de dados)
+# lista2 = bd.Query_Type()
+# print(lista2)
+# for n in lista1:
+#     g.add_node(n, color="purple")
+# for n in lista2:
+#     g.add_node(n, color="red")
+# g.show(pagina)
+
+def grafoTypeEntidade_Rel(): # Metodo utilizado quando não tiver vertices marcados e tiver apenas o relacionamento É marcado
+    g = Network(notebook=True)
+    pagina = "grafo.html"
+    bd = BD()
+    lista = bd.Query_Entity()
+    for n in lista:
+        g.add_node(n, color="purple")
+    bd = BD()
+    lista2 = bd.Query_Type()
+    for n in lista2:
+        g.add_node(n, color="red")
+    for x in lista2:
+            bd = BD()
+            lista3 = bd.QueryTypeEntidade_Rel(x)
+            for y in lista3:
+                g.add_edge(x,y, title="É", color="red")
+
+    g.show(pagina)
+
+def grafoFileEntidade_Rel():
+    g = Network(notebook=True)
+    pagina = "grafo.html"
+    bd = BD()
+    lista = bd.Query_Entity()
+    for n in lista:
+        g.add_node(n, color="purple")
+    bd = BD()
+    lista2 = bd.Query_File()
+    for n in lista2:
+        g.add_node(n, color="blue")
+    for x in lista2:
+            bd = BD()
+            lista3 = bd.QueryFileEntidade_Rel(x)
+            for y in lista3:
+                g.add_edge(x,y, title="Pertence", color="blue")
+
+    g.show(pagina)
+
+def grafoTudo():
+    g = Network(notebook=True)
+    pagina = "grafo.html"
+    bd = BD()
+    lista = bd.Query_Entity()
+    for n in lista:
+        g.add_node(n, color="purple")
+    bd = BD()
+    lista2 = bd.Query_Type()
+    for n in lista2:
+        g.add_node(n, color="red")
+    for x in lista2:
+            bd = BD()
+            lista3 = bd.QueryTypeEntidade_Rel(x)
+            for y in lista3:
+                g.add_edge(x,y, title="É", color="red")
+    bd = BD()
+    lista = bd.Query_Entity()
+    for n in lista:
+        g.add_node(n, color="purple")
+    bd = BD()
+    lista2 = bd.Query_File()
+    for n in lista2:
+        g.add_node(n, color="blue")
+    for x in lista2:
+            bd = BD()
+            lista3 = bd.QueryFileEntidade_Rel(x)
+            for y in lista3:
+                g.add_edge(x,y, title="Pertence", color="blue")
+
+    g.show(pagina)
+
+
+
+
+

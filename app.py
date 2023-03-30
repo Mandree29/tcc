@@ -1,5 +1,5 @@
 
-from grafos.graph import grafoPesquisaPorEntidade
+from grafos.graph import grafoPesquisaPorEntidade, grafoTudo
 from controller import *
 from flask import Flask, render_template, request
 import json
@@ -10,6 +10,7 @@ app = Flask(__name__)
 
 @app.route("/")
 def home():
+    grafoTudo()
     return render_template("index.html")
 
 @app.route("/pesquisa", methods=['GET'])

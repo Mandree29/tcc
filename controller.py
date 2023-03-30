@@ -23,11 +23,10 @@ def encontrando_rel(frase:str):
     return result_rel
 
 
-
 def Check_Controller(vertice:list, rel:list):
 
     if len(vertice) == 3 and len(rel) == 2:  # caso em que está tudo preenchido 3 vertices e 2 relacionamentos
-        return check_tudo()
+        return None
 
     elif len(vertice) == 1 and len(rel) == 0: # caso em que a lista de vertice está com tamanho 1 (apenas um valor selecionado) e 0 de relacionamentos
         if vertice[0] == "Entity":            # apenas o valor entidade
@@ -47,29 +46,22 @@ def Check_Controller(vertice:list, rel:list):
 
     elif len(vertice) == 3 and len(rel) == 0: # caso em que a lista vertice está com tamanho 3 (todos os nós selecionados) e 0 de relacionamentos
         return grafoTodosVertices_semRel()
+    
+    elif len(vertice) == 0 and len(rel) == 1: # caso em que tiver na lista apenas marcado uma relação e nenhum vertice
+        if rel[0] == 'É':
+            return grafoTypeEntidade_Rel()
+        elif rel[0] == 'Pertence':
+            return grafoFileEntidade_Rel()
+    
+    elif len(vertice) == 0 and len(rel) == 2:
+        return grafoTudo()
         
-    #primeiro caso de pesquisa (TUDO)
-def check_tudo():
-    bd = BD()
-    return  bd.Query_tudo()
             
     #caso entity
 def checando_Entidade(): # função utilizada para alimentar a pesquisa automática da barra de pesquisa NÃO PODE APAGAR
     bd = BD()
     return tratamento_json.json_entidade(bd.Query_Entity())
 
-def checando_Entidade_semJson():
-    bd = BD()
-    return bd.Query_Entity()
 
-    #caso file
-def checando_file():
-    bd = BD()
-    return bd.Query_File()
-
-    #caso Type
-def checando_Type():
-    bd = BD()
-    return bd.Query_Type()
 
 

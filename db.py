@@ -1,12 +1,10 @@
-from lib2to3.pgen2 import driver
-from msilib.schema import Class
 from neo4j import GraphDatabase
 import json
 
 
 class BD:
     def __init__(self):
-        self.driver = GraphDatabase.driver(uri="bolt://localhost:7687", auth=("neo4j","dede182"))
+        self.driver = GraphDatabase.driver(uri="bolt://127.0.0.1:7687", auth=("neo4j","dede182"))
         self.session = self.driver.session()
 
     def Query_tudo(self):
@@ -60,3 +58,22 @@ class BD:
             lista.append(result['objeto'])
         self.session.close()
         return lista
+    
+    def QueryTypeEntidade_Rel(self, Type:str):
+        lista = []
+        query =  "match (e:Entity)-[:`É`]->(t:Type) where t.name = '{}' return e.name as objeto".format(Type)
+        results = self.session.run(query)
+        for result in results:
+            lista.append(result['objeto'])
+        self.session.close()
+        return lista
+    
+    def QueryFileEntidade_Rel(self, File:str):
+        lista = []
+        query = "match (e:Entity)-[:Pertence]->(f:File) where f.name ='{}' return e.name as objeto".format(File)
+        results = self.session.run(query)
+        for result in results:
+            lista.append(result['objeto'])
+        self.session.close()
+        return lista
+        
