@@ -55,8 +55,25 @@ def Check_Controller(vertice:list, rel:list):
     
     elif len(vertice) == 0 and len(rel) == 2:
         return grafoTudo()
+    
+    elif len(vertice) == 1 and len(rel) == 1:
+        #Entity
+        if vertice[0] == "Entity" and rel[0] =="Pertence":
+            return grafoFileEntidade_Rel()
+        if vertice[0] == "Entity" and rel[0] == "É":
+            return grafoTypeEntidade_Rel()
+        #File
+        if vertice[0] == "File" and rel[0] == "Pertence":
+            return grafoFileEntidade_Rel()
+        if vertice[0] == "File" and rel[0] == "É":
+            return grafoEntidadeTypeMaisFile()
+        #Type
+        if vertice[0] == "Type" and rel[0] == "Pertence":
+            return grafoEntidadeFileMaisType()
         
-            
+    elif len(rel) == 2:
+        return grafoTudo()
+          
     #caso entity
 def checando_Entidade(): # função utilizada para alimentar a pesquisa automática da barra de pesquisa NÃO PODE APAGAR
     bd = BD()
