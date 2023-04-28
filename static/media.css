@@ -1,4 +1,8 @@
 @media screen and (max-width: 1167px) {
+    main{
+        width: 84%;
+    }
+    
     h1{
         font-size: 1.8rem;
     }
@@ -14,15 +18,19 @@
     main{
         width: 60%;
     }
+
+    ol, ul{
+        width: 52%;
+    }
 }
 
 @media screen and (max-width: 970px) {
     main{
-        width: 70%;
+        width: 80%;
     }
     
     h1{
-        font-size: 1.6rem;
+        font-size: 1.8rem;
     }
 
     h3{
@@ -41,15 +49,20 @@
     .lista2 > input{
         font-size: 1rem;
     }
+
+    ol, ul{
+        width: 70%;
+    }
 }
 
 @media screen and (max-width: 817px) {
     main{
-        width: 76%;
+        width: 84%;
+        margin: 0;
     }
     
     h1{
-        font-size: 1.4rem;
+        font-size: 1.6rem;
     }
 
     h3{
@@ -74,14 +87,6 @@
     main{
         width: 90%;
     }
-    h1{
-        font-size: 1rem;
-    }
-
-    h3{
-        font-size: 1rem;
-    }
-
     #btn{
         font-size: 0.8rem;
     }
@@ -94,4 +99,58 @@
     .lista2 > input{
         font-size: 1rem;
     }
+
+    ol, ul{
+        width: 80%;
+    }
+}
+
+@media screen and (max-width: 768px){
+    main{
+        width: 92%;
+    }
+}
+
+@media screen and (max-width: 480px){
+
+    main{
+        width: 92%;
+
+
+    }
+
+    h1{
+        font-size: 1.2rem;
+    }
+
+    h3{
+        font-size: 1rem;
+    }
+
+    #btn{
+        width: 22%;
+    }
+}
+
+@media screen and (max-width: 360px){
+
+    main{
+        width: 92%;
+
+
+    }
+
+    h1{
+        font-size: 1.1rem;
+    }
+
+    h3{
+        font-size: 1rem;
+    }
+
+    #btn{
+        width: 24%;
+        margin-top: 0;
+    }
+
 }

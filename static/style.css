@@ -254,13 +254,19 @@ ul{
 
 
 ol, ul {
-    padding-left: 1rem;
+    padding-left: 12px;
     margin-bottom: 0;
+    margin-left: 3%;
+    width: 43%;
 }
 
 li{
     margin-left: 0;
     padding: 0;
+}
+
+li:hover{
+    background-color: rgb(226, 225, 225);
 }
 
 
@@ -281,4 +287,9 @@ li{
 
 #tit_vert{
     margin-left: 6%;
+}
+
+iframe{
+    padding: 0;
+    margin: 0;
 }
