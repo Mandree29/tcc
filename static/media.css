@@ -1,0 +1,82 @@
+@media screen and (max-width: 1167px) and (min-width: 520px) {
+    h1{
+        font-size: 1.8rem;
+    }
+
+    h3{
+        font-size: 1.2rem;
+    }
+
+    #btn{
+        font-size: 1rem;
+    }
+}
+
+@media screen and (max-width: 970px) and (min-width: 520px) {
+    h1{
+        font-size: 1.6rem;
+    }
+
+    h3{
+        font-size: 1.2rem;
+    }
+
+    #btn{
+        font-size: 0.9rem;
+    }
+
+    .lista > input{
+        font-size: 1rem;
+        color: blueviolet;
+    }
+
+    .lista2 > input{
+        font-size: 1rem;
+    }
+}
+
+@media screen and (max-width: 817px) and (min-width: 520px) {
+    h1{
+        font-size: 1.4rem;
+    }
+
+    h3{
+        font-size: 1.2rem;
+    }
+
+    #btn{
+        font-size: 0.8rem;
+    }
+
+    .lista > input{
+        font-size: 1rem;
+        color: blueviolet;
+    }
+
+    .lista2 > input{
+        font-size: 1rem;
+    }
+}
+
+@media screen and (max-width: 865px) and (min-width: 520px) {
+    h1{
+        font-size: 1rem;
+    }
+
+    h3{
+        font-size: 1rem;
+    }
+
+    #btn{
+        font-size: 0.8rem;
+    }
+
+    .lista > input{
+        font-size: 1rem;
+        color: blueviolet;
+    }
+
+    .lista2 > input{
+        font-size: 1rem;
+    }
+}
