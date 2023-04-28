@@ -1,4 +1,4 @@
-@media screen and (max-width: 1167px) and (min-width: 520px) {
+@media screen and (max-width: 1167px) {
     h1{
         font-size: 1.8rem;
     }
@@ -10,9 +10,17 @@
     #btn{
         font-size: 1rem;
     }
+
+    main{
+        width: 60%;
+    }
 }
 
-@media screen and (max-width: 970px) and (min-width: 520px) {
+@media screen and (max-width: 970px) {
+    main{
+        width: 70%;
+    }
+    
     h1{
         font-size: 1.6rem;
     }
@@ -35,7 +43,11 @@
     }
 }
 
-@media screen and (max-width: 817px) and (min-width: 520px) {
+@media screen and (max-width: 817px) {
+    main{
+        width: 76%;
+    }
+    
     h1{
         font-size: 1.4rem;
     }
@@ -58,7 +70,10 @@
     }
 }
 
-@media screen and (max-width: 865px) and (min-width: 520px) {
+@media screen and (max-width: 865px) {
+    main{
+        width: 90%;
+    }
     h1{
         font-size: 1rem;
     }
