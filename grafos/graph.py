@@ -6,7 +6,7 @@ from db import *
 
 def grafoEntidade(): #metodo utilizado quando a escolha dos vertices tiver tamanho 1 (apenas Entidade) e sem nenhum relacionamento
     pagina = 'grafo.html'
-    g = Network(notebook=True)
+    g = Network(notebook=True, width="600", height="400px")
     bd = BD()
     lista = bd.Query_Entity()
     for n in lista:
@@ -17,7 +17,7 @@ def grafoEntidade(): #metodo utilizado quando a escolha dos vertices tiver taman
 
 def grafoFile(): # metodo acionado quando a escolha dos vertices tiver tamanho 1 (apenas o file selecionado) e relacionamento tamanho 0 (sem relacionamento)
     pagina = 'grafo.html'
-    g = Network(notebook=True)
+    g = Network(notebook=True, width= "600", height="400px")
     bd = BD()
     lista = bd.Query_File()
     for n in lista:
@@ -27,7 +27,7 @@ def grafoFile(): # metodo acionado quando a escolha dos vertices tiver tamanho 1
 
 def grafoType(): # metodo acionado quando a escolha dos vertices tiver tamanho 1 (apenas o type selecinado) e o relacionamento tiver tamnho 0 (sem relacionamento)
     pagina = 'grafo.html'
-    g = Network(notebook=True)
+    g = Network(notebook=True, width="600", height="400px" )
     bd = BD()
     lista = bd.Query_Type()
     for n in lista:
@@ -37,7 +37,7 @@ def grafoType(): # metodo acionado quando a escolha dos vertices tiver tamanho 1
 
 def grafoEntidadeFile_semRel(): # Método acionado quando a ecolha dos vertices está com tamanho 2 (selecionado Entity e File) e o relacionamento tiver tamanho 0, ou seja nada selecionado
     pagina = "grafo.html"
-    g = Network(notebook=True)
+    g = Network(notebook=True, width= "600", height="400px")
     bd = BD()
     lista1 = bd.Query_Entity()
     bd = BD()                  # tive que estanciar de novo porque cada metodo fecha a conexão (sessão com o banco de dados)
@@ -51,7 +51,7 @@ def grafoEntidadeFile_semRel(): # Método acionado quando a ecolha dos vertices 
 
 def grafoEntidadeType_semRel():
     pagina = "grafo.html"
-    g = Network(notebook=True)
+    g = Network(notebook=True, width= "600", height="400px")
     bd = BD()
     lista1 = bd.Query_Entity()
     bd = BD()                  # tive que estanciar de novo porque cada metodo fecha a conexão (sessão com o banco de dados)
@@ -65,7 +65,7 @@ def grafoEntidadeType_semRel():
 
 def grafoFileType_semRel():
     pagina = "grafo.html"
-    g = Network(notebook=True)
+    g = Network(notebook=True, width= "600")
     bd = BD()
     lista1 = bd.Query_File()
     bd = BD()                  # tive que estanciar de novo porque cada metodo fecha a conexão (sessão com o banco de dados)
@@ -79,7 +79,7 @@ def grafoFileType_semRel():
 
 def grafoTodosVertices_semRel(): # Função utilizada quando o vértice está com o tamanho 3 (todos os vértices selecionados) e relacionamento tamanho 0 (nada selecionado)
     pagina = "grafo.html"
-    g = Network(notebook=True)
+    g = Network(notebook=True, width= "600")
     bd = BD()
     lista1 = bd.Query_Entity()
     bd = BD()                  # tive que estanciar de novo porque cada metodo fecha a conexão (sessão com o banco de dados)
@@ -98,7 +98,7 @@ def grafoTodosVertices_semRel(): # Função utilizada quando o vértice está co
 
 def grafoPesquisaPorEntidade(entidade:str): # geração de grafo para pesquisa individuais de entidade na barra de pesquisa
     pagina = 'grafo.html'
-    g = Network(notebook=True)
+    g = Network(notebook=True, width= "600")
     bd = BD()
     lista = bd.Query_PorEntidade(entidade)
     g.add_node(lista[0][0], color='purple')
@@ -111,7 +111,7 @@ def grafoPesquisaPorEntidade(entidade:str): # geração de grafo para pesquisa i
     return None
 
 def grafoTypeEntidade_Rel(): # Metodo utilizado quando não tiver vertices marcados e tiver apenas o relacionamento É marcado
-    g = Network(notebook=True)
+    g = Network(notebook=True, width="600" )
     pagina = "grafo.html"
     bd = BD()
     lista = bd.Query_Entity()
@@ -130,7 +130,7 @@ def grafoTypeEntidade_Rel(): # Metodo utilizado quando não tiver vertices marca
     g.show(pagina)
 
 def grafoFileEntidade_Rel():
-    g = Network(notebook=True)
+    g = Network(notebook=True, width= "600")
     pagina = "grafo.html"
     bd = BD()
     lista = bd.Query_Entity()
@@ -149,7 +149,7 @@ def grafoFileEntidade_Rel():
     g.show(pagina)
 
 def grafoTudo():
-    g = Network(notebook=True)
+    g = Network(notebook=True, width="600" )
     pagina = "grafo.html"
     bd = BD()
     lista = bd.Query_Entity()
@@ -181,7 +181,7 @@ def grafoTudo():
 
 def grafoEntidadeTypeMaisFile():
     pagina = 'grafo.html'
-    g = Network(notebook=True)
+    g = Network(notebook=True, width= "600" )
     bd = BD()
     lista = bd.Query_File()
     for n in lista:
@@ -204,7 +204,7 @@ def grafoEntidadeTypeMaisFile():
 
 def grafoEntidadeFileMaisType():
     pagina = 'grafo.html'
-    g = Network(notebook=True)
+    g = Network(notebook=True, width="600")
     bd = BD()
     lista = bd.Query_Type()
     for n in lista:
